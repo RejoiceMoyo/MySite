@@ -198,6 +198,7 @@ function App() {
               <a href="#" className="text-2xl hover:text-pink-400 text-pink-500"><FaWhatsapp /></a>
             </div>
             <p className="text-gray-300 text-sm">© 2024 Rejo Moyo. All rights reserved.</p>
+            <p className="text-gray-300 text-sm">Designed with ❤️ by Rejo Moyo</p>
           </div>
         </div>
       </footer>
