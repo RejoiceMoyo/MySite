@@ -188,17 +188,25 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary py-8 px-8 w-full">
+      <footer className="bg-primary py-8 px-8">
         <div className="w-full">
           <div className="flex flex-col items-center justify-center">
             <div className="flex space-x-6 mb-4">
-              <a href="#" className="text-2xl hover:text-pink-400 text-pink-500"><FaLinkedin /></a>
-              <a href="#" className="text-2xl hover:text-pink-400 text-pink-500"><FaGithub /></a>
-              <a href="#" className="text-2xl hover:text-pink-400 text-pink-500"><FaTwitter /></a>
-              <a href="#" className="text-2xl hover:text-pink-400 text-pink-500"><FaWhatsapp /></a>
+              <a href="https://www.linkedin.com/in/rejoicemoyo/" className="text-2xl hover:text-pink-200 text-pink-500">
+                <FaLinkedin />
+              </a>
+              <a href="https://github.com/RejoiceMoyo" className="text-2xl hover:text-pink-200 text-pink-500">
+                <FaGithub />
+              </a>
+              <a href="https://x.com/bytechicX" className="text-2xl hover:text-pink-200 text-pink-500">
+                <FaTwitter />
+              </a>
+              <a href="https://wa.me/+263788736513" className="text-2xl hover:text-pink-200 text-pink-500">
+                <FaWhatsapp />
+              </a>
             </div>
             <p className="text-gray-300 text-sm">© 2024 Rejo Moyo. All rights reserved.</p>
-            <p className="text-gray-300 text-sm">Designed with ❤️ by Rejo Moyo</p>
+            <p className="text-gray-300 text-sm">With ❤️ by Rejo Moyo</p>
           </div>
         </div>
       </footer>
