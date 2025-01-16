@@ -119,7 +119,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-10 px-16 bg-black w-full">
+      <section id="projects" className="py-1 px-16 bg-black w-full">
         <div className="w-full">
           <h2 className="text-4xl font-bold mb-12 text-center">My Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
