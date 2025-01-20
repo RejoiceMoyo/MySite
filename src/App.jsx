@@ -1,7 +1,8 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart, FaHtml5, FaCss3Alt, FaJava, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart, FaHtml5, FaCss3Alt, FaJava, FaJs, FaReact, FaNodeJs, FaBars, FaTimes } from 'react-icons/fa';
 import { SiSupabase, SiTailwindcss, SiGit } from 'react-icons/si';
 import ProjectCard from './components/ProjectCard';
 import SkillIcon from './components/SkillIcon';
+import { useState } from 'react';
 
 function App() {
   const projects = [
@@ -82,18 +83,49 @@ function App() {
     }
   ];
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header/Navigation */}
-      <nav className="fixed w-full bg-primary/90 backdrop-blur-sm z-50 py-4">
-        <div className="px-16 w-full">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Updated Header/Navigation */}
+      <nav className="fixed w-full bg-primary/90 backdrop-blur-sm z-50">
+        <div className="px-4 md:px-16 w-full">
           <div className="flex items-center justify-between h-16">
-            <span className="text-3xl font-bold">ByteChic<span className="text-pink-600">X</span></span>
-            <div className="flex space-x-14 font-semibold">
+            <span className="text-2xl md:text-3xl font-bold">ByteChic<span className="text-pink-600">X</span></span>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+              onClick={toggleMenu}
+              type="button"
+            >
+              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex space-x-14 font-semibold">
               <a href="#home" className="text-gray-300 hover:text-white text-lg">Home</a>
               <a href="#projects" className="text-gray-300 hover:text-white text-lg">Projects</a>
               <a href="#skills" className="text-gray-300 hover:text-white text-lg">Skills</a>
               <a href="#contact" className="text-gray-300 hover:text-white text-lg">Contact</a>
+            </div>
+          </div>
+
+          {/* Mobile Menu - Fixed width */}
+          <div 
+            className={`${
+              isMenuOpen ? 'block' : 'hidden'
+            } absolute top-16 left-0 w-full bg-primary/95 backdrop-blur-sm md:hidden`}
+          >
+            <div className="flex flex-col items-center py-4 space-y-4">
+              <a href="#home" className="text-gray-300 hover:text-white text-lg w-full text-center py-2" onClick={toggleMenu}>Home</a>
+              <a href="#projects" className="text-gray-300 hover:text-white text-lg w-full text-center py-2" onClick={toggleMenu}>Projects</a>
+              <a href="#skills" className="text-gray-300 hover:text-white text-lg w-full text-center py-2" onClick={toggleMenu}>Skills</a>
+              <a href="#contact" className="text-gray-300 hover:text-white text-lg w-full text-center py-2" onClick={toggleMenu}>Contact</a>
             </div>
           </div>
         </div>
